@@ -15,10 +15,13 @@ SUBTYPES = {'WindOn': [80, 90, 100, 110, 120],
             'RoofTopPV': [0],
             'OpenFieldPV': [0]}
 
-YEARS = [2019]
+YEAR = 2019
 
-DEFAULT_YEAR = 2019
-
-def PATH_TO_FILE(type, subtype, country, year = DEFAULT_YEAR):
+def PATH_TO_TS_FILE(type, subtype, country, year = YEAR):
     country = country.replace(" ", "")
     return f'..\\Files {country}\\Renewable Energy\\Regional Analysis\\{country}_level0\\{country}_level0_{type}_{subtype}_TS_{year}.csv'
+
+
+def PATH_TO_STATS_FILE(type, subtype, country, year = YEAR):
+    country = country.replace(" ", "")
+    return f'..\\Files {country}\\Renewable Energy\\Regional Analysis\\{country}_level0\\{country}_level0_{type}_{subtype}_Region_stats_{year}.csv'

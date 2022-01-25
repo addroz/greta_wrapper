@@ -8,6 +8,12 @@ file with the following information:
 
 For each country, type of energy source and height of the turbine (if applies).
 
+# How to run
+
+`python greta_wrapper.py`
+
+# Config
+
 Configurations available in config.py file:
 1. COUNTRIES - list of countries to be included in the merged and grouped data.
 2. TYPES - types of technologies.

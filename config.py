@@ -10,8 +10,8 @@ COUNTRIES = ['Austria', 'Belgium', 'Bulgaria', 'Croatia', 'Czechia', 'Denmark', 
 
 TYPES = ['WindOn', 'WindOff', 'RoofTopPV', 'OpenFieldPV']
 
-SUBTYPES = {'WindOn': [80, 90, 100, 110, 120],
-            'WindOff': [100, 120, 130, 150],
+SUBTYPES = {'WindOn': [80, 90, 100, 110, 120, 130, 140, 150],
+            'WindOff': [90, 100, 120, 130, 150, 160, 170],
             'RoofTopPV': [0],
             'OpenFieldPV': [0]}
 

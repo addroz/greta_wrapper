@@ -17,8 +17,10 @@ def fetch_and_summarise_data_by_type_country(type, subtype, country):
         data_input_stats = data_input_stats.applymap(str_comma_to_float)
 
         return {'type': type, 'subtype': subtype, 'country': country,
+            'FLH_q99': sum(data_input_ts['q99']), 'FLH_q95': sum(data_input_ts['q95']),
             'FLH_q90': sum(data_input_ts['q90']), 'FLH_q70': sum(data_input_ts['q70']),
             'FLH_q50': sum(data_input_ts['q50']), 'FLH_q30': sum(data_input_ts['q30']),
+            'FLH_q10': sum(data_input_ts['q10']),
             'Power_Potential_GW': mean(data_input_stats['Power_Potential_GW']),
             'Power_Potential_Weighted_GW': mean(data_input_stats['Power_Potential_Weighted_GW'])}
     except FileNotFoundError:
@@ -29,8 +31,8 @@ def fetch_and_summarise_data_by_type_country(type, subtype, country):
         print(data_input_ts.head())
 
 def fetch_and_summarise_data():
-    data = pd.DataFrame(columns=['type', 'subtype', 'country', 'FLH_q90', 'FLH_q70', 'FLH_q50',
-        'FLH_q30', 'Power_Potential_GW', 'Power_Potential_Weighted_GW'])
+    data = pd.DataFrame(columns=['type', 'subtype', 'country', 'FLH_q99', 'FLH_q95', 'FLH_q90', 'FLH_q70', 'FLH_q50',
+        'FLH_q30', 'FLH_q10', 'Power_Potential_GW', 'Power_Potential_Weighted_GW'])
 
     for type in config.TYPES:
         for subtype in config.SUBTYPES[type]:

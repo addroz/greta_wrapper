@@ -1,0 +1,4 @@
+(1) Kick out Potential - Done
+(2) Leave Potential_weighted - Done
+(3) Calculate Energy_Potential_weighted_TWh / FLH_mean_masked * 1000 - Done
+(4) Calculate Energy_Potential_weighted_TWh / FLH_median_masked * 1000 - Done

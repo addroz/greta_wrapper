@@ -10,7 +10,7 @@ def str_comma_to_float(x):
         return float(x.replace(',', '.'))
     return x
 
-quantiles = [99, 97, 95, 93, 91, 90, 85, 75, 70, 50, 30, 10]
+# quantiles for which the data is generated : [99, 97, 95, 93, 91, 90, 85, 75, 70, 50, 30, 10]
 
 def fetch_and_summarise_data_by_type_country(type, subtype, country):
     try:
@@ -64,7 +64,7 @@ def generate_class_irnw(data):
     data_pivoted = data.pivot(index = 'country', columns = 'type', values = 'Power_Potential_Weighted_GW')
     data_pivoted.rename(columns = {'OpenFieldPV': 'OpenPV', 'RoofTopPV': 'RoofPV'}, inplace = True)
     data_pivoted.index.names = ['Site']
-    data_pivoted.to_excel('class_irnw.xlsx', index = True)
+    data_pivoted.to_excel('class_irnw.xlsx', sheet_name = 'cap-up', index = True)
     print('Results saved to: class_irnw.xlsx')
 
 def generate_process_irnw_flh(data):
